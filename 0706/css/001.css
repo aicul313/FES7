@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'GmFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DiaFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SloFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section {
+    border: 2px dashed royalblue;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'DiaFont';
+}
+
+.sec1 {
+    font-family: 'GmFont';
+}
+
+.slogan {
+    font-family: 'SloFont';
+    text-shadow: 0 0 1em #999;
+    text-decoration: #b678e5 underline wavy 2px;
+}
+
+.sec3 {
+    font-family: 'GmFont';
+}
