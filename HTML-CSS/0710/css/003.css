@@ -1,0 +1,28 @@
+.ratio img {
+    width: 30%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    /* object-position: 0 0; */
+}
+
+.thumb {
+    width: 30%;
+    display: inline-block;
+}
+
+.thumb div {
+    background-color: skyblue;
+    position: relative;
+    height: 0;
+    padding-top: 50%;
+    overflow: hidden;
+}
+
+.thumb div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
