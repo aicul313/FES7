@@ -1,0 +1,17 @@
+.container {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    background-color: #ddd;
+}
+
+.item {
+    background-color: skyblue;
+    border: 2px solid royalblue;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.item1 {
+    flex-grow: 2;
+}

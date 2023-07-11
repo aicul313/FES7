@@ -1,0 +1,13 @@
+img {
+    float: right;
+}
+
+span {
+    float: left;
+    background-color: skyblue;
+    margin: 20px;
+}
+
+p {
+    clear: both;
+}
