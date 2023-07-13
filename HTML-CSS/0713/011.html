@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>table</title>
+
+    <style>
+        caption {
+            caption-side: bottom;
+        }
+
+        .col1 {
+            background: gold;
+            width: 10%;
+        }
+
+        .col2 {
+            background-color: skyblue;
+        }
+
+        tbody tr:nth-child(2) {
+            background-color: salmon;
+        }
+
+        .col3 {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h2>테이블의 제목</h2> -->
+    <table>
+        <!-- 캡션은 생략 가능, 반드시 table의 첫 번째 요소로 들어와야 함 -->
+        <!-- 캡션을 테이블 아래에 적고 싶을 때는 css에서 caption-side:bottom; 설정해주기 -->
+        <caption>테이블의 제목, 설명</caption>
+
+        <colgroup>
+            <col class="col1">
+            <col style="width:20%;" span="2" class="col2">
+            <col class="col3">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row" rowspan="4">제목</th>
+                <td colspan="2">내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td rowspan="2">내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

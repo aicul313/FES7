@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard-Bold', sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+:root {
+    --main-color: #2D3848;
+    --positive-color:#439AFF;
+    --negative-color: #eb5757;
+    --text-main: #fff;
+    --border-basic: #1A202C;
+}
+
+ul, li {
+    list-style: none;
+}
+
+li {
+    float: left;
+}
+
+.btn1 {
+    width: 88px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: var(--main-color, black);
+    border: 2px solid var(--border-basic);
+    box-shadow: inset 2px 2px 0 0 #4A5568;
+    color: #CBD5DF;
+    font-size: 12px;
+}
+
+.btn1:disabled {
+    width: 88px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: #3a4556;
+    border: 2px solid var(--border-basic);
+    box-shadow: none;
+    color: #4a5568;
+    font-size: 12px;
+}
+
+.yes1 {
+    width: 88px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: var(--main-color, black);
+    border: 2px solid var(--border-basic);
+    box-shadow: inset 2px 2px 0 0 #4A5568;
+    color: var(--positive-color);
+    font-size: 12px;
+}
+
+.del1 {
+    width: 88px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: var(--main-color, black);
+    border: 2px solid var(--border-basic);
+    box-shadow: inset 2px 2px 0 0 #4A5568;
+    color: var(--negative-color);
+    font-size: 12px;
+}
+
+.btn1:enabled:hover {
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}
+
+.yes1:hover {
+    background-color: var(--positive-color);
+    border-color: var(--positive-color);
+    box-shadow: inset 2px 2px 0 0 #73b4ff;
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}
+
+.del1:hover {
+    background-color: var(--negative-color);
+    border-color: var(--negative-color);
+    box-shadow: inset 2px 2px 0 0 #fd6f6f;
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}
+
+.btn1:enabled:active {
+    box-shadow: inset 2px 2px 0 0 #343f50;
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}
+
+.yes1:active {
+    box-shadow: inset 2px 2px 0 0 #3b78be;
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}
+
+.del1:active {
+    box-shadow: inset 2px 2px 0 0 #d94242;
+    color: var(--text-main);
+    text-decoration: underline 2px var(--text-main);
+}

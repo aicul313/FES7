@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>transform</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:nth-child(even) {
+            background-color: seagreen;
+        }
+
+        .scale {
+            /* transform: scale(2);*/
+            transition: all 0.3s;
+            /* transform-origin: 0 0; */
+        } 
+
+        .scale:hover {
+            /* 
+                transform 속성
+                1. scale : 크기변형 - 본인의 위치에서 크기가 변형됨 / origin으로 기준 값 바꿀 수 있음
+                2. rotate : 돌리기
+                3. translate : 위치이동
+                4. skew
+                5. 중복해서 쓰고 싶을 때는 transform 안에서 다 쓰기
+                - 단, scale과 rotate는 따로 빼서 쓰기 가능
+            */
+            /* transform: scale(-1, -2); */
+            /* transform: scaleX(1.2) scaleY(1.5); */
+            /* transform: rotate(-180deg); */
+            /* transform: translate(50px, 50px); */
+            /* transform: skew(30deg); */
+            transform: translate(10px, 10px) skew(20deg);
+            rotate: -180deg;
+            scale: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="box scale">
+        box
+    </div>
+    <div class="box">
+        box
+    </div>
+</body>
+</html>

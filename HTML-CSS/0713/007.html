@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        :root {
+            --main-color: aqua;
+        }
+
+        /* btn이 속한 클래스 */
+        [class~="btn"] {
+            background-color:red
+        }
+
+        /* btn으로 시작하는 클래스 */
+        [class^="btn"] {
+            border: 3px solid blue;
+        }
+
+        /* btn 문자열을 포함하는 요소 모두 선택*/
+        [class*="btn"] {
+            text-decoration: underline 2px green;
+        }
+
+        .message {
+            color: var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <button type="button">버튼1</button>
+    <button class="btn" type="button">버튼2</button>
+    <button class="btn1" type="button">버튼3</button>
+    <button class="btn reset" type="button">버튼4</button>
+    <button class="reset btn" type="button">버튼5</button>
+    <button class="btn-negative" type="button">버튼6</button>
+    <button class="btn-positive" type="button">버튼7</button>
+
+    <p class="message positive">정보 메시지</p>
+    <p class="message negative">정보 메시지</p>
+</body>
+</html>
