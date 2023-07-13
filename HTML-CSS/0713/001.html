@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 변수</title>
+
+    <style>
+        /*
+            전역변수 설정 : '--변수명'
+            예시 : --main-color : salmon 
+            적용 : p { color: var(--main-color, 대체 색상) }
+        */
+        :root {
+            --main-color: royalblue;
+            --pane-padding: 0.5em 2em;
+            --border-radius: 0.4em;
+            --border-width: var(--border-width);
+        }
+
+        .dark {
+            --background-color: #000;
+            --color1: white
+        }
+
+        .light {
+            --background-color: #eee;
+            --color1: black;
+        }
+
+        section {
+            --color2: red;
+            background-color: var(--background-color);
+            color: var(--color1);
+        }
+
+        button {
+            --border-width: 1px 2px 3px 4px;
+            color: var(--main-color, blue);
+            border-color: var(--main-color, blue);
+            border-style: solid;
+            border-width: var(--border-width);
+            border-bottom: 3px solid var(--color2);
+            padding: var(--pane-padding);
+        }
+
+        p {
+            color: var(--main-color, royalblue);
+            border-style: solid;
+            border-color: var(--main-color, blue);
+            border-width: var(--border-width, 1px 2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="light">
+        <section>
+            <button type="button">버튼</button>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolores ab, vero aliquam tempore tenetur? Atque ea iusto, voluptatibus at et itaque quia, blanditiis mollitia consequatur dolores, eius maiores placeat!
+            </p>
+        </section>
+    </div>
+
+    <div class="dark">
+        <section>
+            <button type="button">버튼</button>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolores ab, vero aliquam tempore tenetur? Atque ea iusto, voluptatibus at et itaque quia, blanditiis mollitia consequatur dolores, eius maiores placeat!
+            </p>
+        </section>
+    </div>
+
+    <button type="button">버튼</button>
+</body>
+</html>
