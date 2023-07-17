@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>grid - try</title>
+
+    <style>
+
+        .container {
+            display: grid;
+            width: 500px;
+            height: 500px;
+            gap: 10px;
+            /* grid-template-areas: 
+            "blue blue blue yellow yellow"
+            "purple purple orange yellow yellow"
+            "red red green green green"
+            ; */
+            grid-template-areas:
+            "blue blue yellow"
+            "purple orange yellow"
+            "red green green"
+            ;
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 2fr 1fr 2fr;
+            /* align-items: center;
+            justify-content: center; */
+        }
+
+        .container div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blue {
+            grid-area: blue;
+            background-color: #4169e1;
+        }
+
+        .yellow {
+            grid-area: yellow;
+            background-color: #FFD602;
+        }
+
+        .purple {
+            grid-area: purple;
+            background-color: #695ACD;
+        }
+
+        .orange {
+            grid-area: orange;
+            background-color: #F4A361;
+        }
+
+        .red {
+            grid-area: red;
+            background-color: #FA8172;
+        }
+
+        .green {
+            grid-area: green;
+            background-color: #2E8B58;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="purple"></div>
+        <div class="orange"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+
+    </div>
+
+</body>
+</html>

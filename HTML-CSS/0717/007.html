@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>layout - grid</title>
+
+    <style>
+        
+        .layout {
+            background-color: #466FA6;
+            display: grid;
+            width: 600px;
+            height: 600px;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 3fr 1fr;
+            gap:10px;
+            padding: 10px;
+            color: white;
+        }
+
+        header {
+            background-color: #96C9F2;
+            /* grid-column-start: 1;
+            grid-column-end: -1; */
+            grid-column: 1/-1;
+            /* grid-row-start: 1;
+            grid-row-end: 2; */
+            /* grid-row: 1/2; */
+            /* grid-area: 1/1/2/3; */
+        }
+
+        section {
+            background-color: #485373;
+            /* grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2; */
+        }
+
+        aside {
+            background-color: #C7F544;
+            /* grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3; */
+        }
+
+        footer {
+            background-color: #FF7769;
+            grid-column-start: 1;
+            grid-column-end: -1;
+            /* grid-row-start: 3;
+            grid-row-end: 4; */
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="layout">
+
+        <header>header</header>
+        <section>section</section>
+        <aside>aside</aside>
+        <footer>footer</footer>
+
+    </div>
+
+</body>
+
+</html>

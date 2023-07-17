@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>layout - grid</title>
+
+    <style>
+        
+        .layout {
+            background-color: #466FA6;
+            display: grid;
+            width: 600px;
+            height: 600px;
+            padding: 10px;
+            gap: 10px;
+            color: white;
+
+            grid-template-areas: 
+                "header header header"
+                "section section aside"
+                "footer footer footer"
+            ;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+
+        header {
+            background-color: #96C9F2;
+            grid-area: header;
+        }
+
+        section {
+            background-color: #485373;
+            grid-area: section;
+        }
+
+        aside {
+            background-color: #C7F544;
+            grid-area: aside;
+        }
+
+        footer {
+            background-color: #FF7769;
+            grid-area: footer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="layout">
+
+        <header>header</header>
+        <section>section</section>
+        <aside>aside</aside>
+        <footer>footer</footer>
+
+    </div>
+
+</body>
+
+</html>
