@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'IAMAPLAYER';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'intelmono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(255, 215, 228);
+}
+
+h1 {
+    font-family: 'IAMAPLAYER';
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto;
+    color: black;
+}
+
+h2 {
+    font-family: 'intelmono';
+    font-size: 16px;
+    font-weight: normal;
+    width: fit-content;
+    margin: 0 auto;
+    color: black;
+}
+
+.contact {
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.contact img {
+    width: 40px;
+}
+
+.contact img:hover, .contact a:hover {
+    transform: scale(1.2);
+}
+
+@keyframes hamdingMoving {
+    0% {
+        transform: rotate(10deg) scale(1);
+    }
+    25% {
+        transform: rotate(10deg) scale(1);
+    }
+    50% {
+        transform: rotate(-20deg) scale(1);
+    }
+    80% {
+        transform: rotate(20deg) scale(1);
+    }
+    to {
+        transform: rotate(-30deg) scale(1.4);
+    }
+}
+
+@keyframes earleft {
+    20% {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes earright {
+    20% {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(25deg);
+    }
+}
+
+@keyframes cheek {
+    from {
+        background-color: #cacaca;
+    }
+
+    to {
+        background-color: #d7715f;
+        transform: scale(1.5);
+    }
+}
+
+.hamding {
+    animation: hamdingMoving 2s infinite;
+    position: relative;
+    margin: 160px auto;
+    width: 394px;
+    height: 300px;
+}
+
+.ear {
+    position: absolute;
+    top: 10px;
+    width: 90px;
+    height: 90px;
+    border: 9px solid black;
+    border-radius: 90px;
+    background-color: #cacaca;
+}
+
+.ear.left {
+    animation: earleft 0.3s infinite;
+    left: 25px;
+    transform: rotate(10deg) skew(10deg);
+}
+
+.ear.right {
+    animation: earright 0.3s infinite;
+    right: 25px;
+    transform: rotate(-10deg) skew(-10deg);
+}
+
+.ear:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 100px;
+    background-color: white;
+}
+
+.cheeckLeft {
+    position: absolute;
+    top: 190px;
+    left: -15%;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.cheeckRight {
+    position: absolute;
+    top: 190px;
+    right: -15%;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.face {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 370px;
+    border-radius: 90% 90% 80% 80% / 100% 100% 63% 63%;
+    border: 9px solid black;
+    background-color: #cacaca;
+    overflow: hidden;
+}
+
+.hair {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: rgb(108, 108, 108);
+    transform: skewX(-17deg) skewY(40deg);
+}
+
+.eye {
+    position: absolute;
+    top: 147px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.eye.left {
+    left: 110px;
+}
+
+.eye.right {
+    right: 110px;
+}
+
+.nose {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 20px;
+    height: 15px;
+    border-radius: 22px;
+    background-color: black;
+    z-index: inherit;1
+}
+
+.face img {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.cheeckInLeft {
+    position: absolute;
+    top: 200px;
+    left: -13%;
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: #cacaca;
+}
+
+.cheeckInRight {
+    position: absolute;
+    top: 200px;
+    right: -13%;
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: #cacaca;
+}
+
+.pinkcheeckleft {
+    animation: cheek 0.5s infinite;
+    width: 36px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #d7715f;
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    z-index: 4;
+}
+
+.pinkcheeckright {
+    animation: cheek 0.5s infinite;
+    width: 36px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #d7715f;
+    position: absolute;
+    top: 200px;
+    right: 15%;
+    z-index: 4;
+}
