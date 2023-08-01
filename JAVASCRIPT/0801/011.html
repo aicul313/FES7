@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>String</title>
+
+</head>
+
+<body>
+    <script>
+        /*
+            문자열(String)은 작은따옴표(')나 큰따옴표("), 빽틱(`)으로 둘러싼 일련의 문자를 가리킴
+        */
+
+        // 예전 방법
+        let s = 'hello\nworld';
+        console.log(s);
+
+        // 현재 방법 - 빽틱 안에서는 줄바꿈도 일어나고, 앞에 띄어쓰기가 있으면 콘솔창에서도 띄어쓰기 한 만큼 보임
+        let st = `hello
+world`;
+        console.log(st);
+
+        let age = 10;
+        console.log(`홍길동의 나이는 ${age}살 입니다.`);
+        console.log(`홍길동 형의 나이는 ${2*age}살 입니다.`);
+        console.log('홍길동의 나이는 ' + age + '살입니다.');
+
+        // 순서 출력
+        let name = '정현지';
+        console.log(name[0]);
+        // javascript에서는 문자열의 순서를 넘어갔을 때 에러가 발생하지 않고 undefined를 출력함
+        console.log(name[100]);
+        console.log(name[-1]); // 다른 언어에서는 마지막 문자를 출력하지만, javascript에서는 undefined를 출력함
+
+        // 문자열의 사칙연산
+        // --- 다른 언어에서는 에러가 남
+        console.log('1' + 2 + 3); // 123 
+        console.log(+ 2 + 3 + '1'); // 51
+        console.log(+ 2 + 3 + +'1'); // 6
+        console.log('b' + 'a' + + 'a'); //banana
+        console.log('1' - '1'); //0
+        /// ---
+        console.log('jeong' + 'hyeonji');
+        console.log('hyeonji' * 3); //Nan | 하지만 다른 언어에서는 hyeonjihyeonjihyeonji라고 출력함
+
+        // 형변환
+        console.log('1' + '1');
+
+        // 묵시적 형변환 | 실무에서 권장하지 않음
+        console.log(+'1' + + '1');
+        console.log(Number('1') + Number('1'));
+
+        // 권장!
+        console.log(parseInt('1') + parseInt('1'));
+
+        // 실무에서 권장하지 않음
+        console.log(String(1) + String(1));
+
+        /*
+            console.log(1.toString() + 1.toString());
+            불가능한 코드임. javascript에서는 소수점(.)이 들어가면 소수점 앞에 있는 것을 메서드로 인식함.
+        */
+        // 이건 가능함
+        let x = 10;
+        console.log(x.toString() + x.toString());
+    </script>
+</body>
+
+</html>
