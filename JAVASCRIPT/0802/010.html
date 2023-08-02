@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>연습문제</title>
+
+</head>
+
+<body>
+    <script>
+        // https://school.programmers.co.kr/learn/courses/30/lessons/120906
+
+
+        // 첫 번째 풀이방법
+        let answer = 0;
+        let inputValue = 1234;
+
+        answer = answer + (inputValue % 10);
+        inputValue = parseInt(inputValue / 10);
+
+        answer = answer + (inputValue % 10);
+        inputValue = parseInt(inputValue / 10);
+
+        answer = answer + (inputValue % 10);
+        inputValue = parseInt(inputValue / 10);
+
+        answer = answer + (inputValue % 10);
+        inputValue = parseInt(inputValue / 10);
+
+        
+        // 두 번째 풀이방법
+        let answer2 = 0;
+        let inputValue2 = 1234;
+        inputValue2 = '' + inputValue2;
+        answer2 += +inputValue2[0];
+        answer2 += +inputValue2[1];
+        answer2 += +inputValue2[2];
+        answer2 += +inputValue2[3];
+
+
+        // 세 번째 풀이방법
+        let answer3 = 0;
+        let inputValue3 = 1234;
+
+        inputValue3 = inputValue3.toString();
+        answer3 += parseInt(inputValue3[0]);
+        answer3 += parseInt(inputValue3[1]);
+        answer3 += parseInt(inputValue3[2]);
+        answer3 += parseInt(inputValue3[3]);
+
+
+        // 네 번째 풀이방법 (C언어 스타일)
+        let answer4 = 0;
+        let inputValue4 = 1234;
+
+        answer4 = answer4 + (inputValue4 % 10); // 0 -> 4
+        inputValue4 = parseInt(inputValue4 / 10); // 1234 -> 123
+        
+        answer4 = answer4 + (inputValue4 % 10); // 4 -> 7
+        inputValue4 = parseInt(inputValue4 / 10); // 123 -> 12
+
+        answer4 = answer4 + (inputValue4 % 10); // 7 -> 9
+        inputValue4 = parseInt(inputValue4 / 10); // 12 -> 1
+
+        answer4 = answer4 + (inputValue4 % 10); // 9 -> 10
+        inputValue4 = parseInt(inputValue4 / 10); // 1 -> 0
+
+        
+        // 다섯 번째 풀이방법
+        let inputValue5 = 1234;
+
+        inputValue5.toString().split('').reduce((a, c)=> a + parseInt(c), 0);
+
+    </script>
+</body>
+
+</html>

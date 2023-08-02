@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>String 메서드</title>
+
+</head>
+
+<body>
+    <script>
+        let s = 'paullab CEO 이호준';
+        let ss = 'CTO 김창영';
+        let sss = 'paullab CEO 이호준 CTO 김창영 CTO 홍길동';
+
+        // replace
+        console.log(s.replace('CEO', 'CFO'));
+        console.log(sss.replace(/C[ET]O/g, '잡부'));
+
+        // replace 고급 문법
+        const string = `hojun, lee
+gildong, hong
+hojung, choi
+junho, lee`;
+
+        let result1 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+        console.log(result1);
+
+        let result2 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+        console.log(result2);
+
+        let result3 = string.replace(/(\w+), (\w+)/gm, "제 이름은 $2 제 성은 $1 입니다.");
+        console.log(result3);
+
+        // replaceAll
+        // 구 브라우저에서 작동하지 않을 확률이 매우 높음 > caniuse 확인하기
+        // 21년에 추가된 기능
+        console.log(sss.replaceAll('CTO', '잡부'));
+
+        // includes
+        ss.includes('CTO'); // true
+        ss.includes('CEO'); // false
+
+        // 메서드 채이닝
+        // 길어지면 가독성이 떨어짐 가독성을 위해 개행해주기
+        sss.replace('CEO', 'CFO').includes('CEO').toString().toUpperCase();
+        sss
+            .replcae('CEO', 'CFO')
+            .includes('CEO')
+            .toString()
+            .toUpperCase();
+
+        // split
+        s.split(' '); // ['paullab', 'CEO', '이호준']
+        '010-8716-9644'.split('-'); // ['010', '8716', '9644'];
+        '010-8716-9644'.split(' '); // 띄어쓰기가 없ㅅ브니다
+        '010-8716-9644'.split(''); // ['0', '1', '0', '-', '8', '7', '1', '6', '-', '9', '6', '4', '4'];
+
+        // 문제 : text1 ~ text4를 split을 사용하여 아래 배열로 만들어주세요
+        let text1 = 'aa bb cc dd';
+        let text2 = 'aa-bb-cc-dd';
+        let text3 = 'aa,bb,cc,dd';
+        let text4 = 'aa,bb-cc-dd';
+        
+        // ['aa', 'bb', 'cc', 'dd']
+        // 해답코드
+        // 1.
+        text1.split(' ');
+        // 2.
+        text2.split('-');
+        // 3.
+        text3.split(',');
+        // 4-1.
+        text4.split(/[,-]/);
+        // 4-2.
+        text4.replace(',', '-').split('-');
+
+        text5 = text4.replace(',', '-');
+        text5.split('-');
+
+        // trim
+        let text6 = '      aa bb cc dd       ';
+        text6.trim(); // 'aa bb cc dd'
+        text6.replaceAll(' ', ''); // 'aabbccdd'
+        
+        // padStart
+        let text7 = '123';
+        text7.padStart(5, '0');// '00123'
+        // 카카오 입사문제 일부(padStart, replace만 사용)
+        // 우리의 목표: 00101 -> '  # #'
+        let text8 = '101'
+        text8.padStart(5, '0').replaceAll('0', ' ').replaceAll('1', '#')
+
+        // concat
+        text1.concat(text2);
+    </script>
+</body>
+
+</html>

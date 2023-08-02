@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>boolean</title>
+
+</head>
+
+<body>
+    <!-- true, false -->
+    <script>
+        // true (참, 1), false (거짓, 0)
+        // and 논리곱, or 논리합, not 부정
+
+        // and나 or 둘 다 뒤를 볼 필요가 없으면 보지 않음
+
+        // and 논리곱
+        console.log(true && true);
+        console.log(true && false);
+        console.log(false && true);
+        console.log(false && false);
+        console.log('가' && '나'); // true
+        console.log('' && '나'); // false
+
+        Boolean('가'); // true
+        Boolean(''); // false
+        !!'가'; // true
+        !!''; // false
+
+        // or 논리합
+        console.log(true || true); // true
+        console.log(true || false); // true
+        console.log(false || true); // true
+        console.log(false || false); // false
+
+        let username = "hyeonji";
+        console.log(username || '이름없음'); // hyeonji
+
+        let username2 = '';
+        console.log(username2 || '이름없음'); // 이름없음
+
+        // not 부정
+        console.log(!true);
+        console.log(!false);
+
+        for (let i = 0; i < 100; i++) {
+            if(i % 3 == 0 && 1 % 5 == 0) {
+                // and는 둘 다 만족하면 실행해라
+                console.log(i);
+            }
+        }
+
+        for (let i = 0; i < 100; i++) {
+            if(i % 3 == 0 || 1 % 5 == 0) {
+                // or는 둘 중 하나만 만족하면 실행해라
+                console.log(i);
+            }
+        }
+
+        // if의 중첩은 논리연산자로 대체할 수 있음
+        for (let i = 0; i < 100; i++) {
+            if(i % 3 == 0) {
+                if(1 % 5 == 0){
+                    console.log(i);
+                }
+            }
+        }
+
+        console.log(3 & 5);
+
+        // 0011 // 3
+        // 0101 // 5
+        // ----
+        // 0001 // 1
+
+        console.log(3 | 5);
+
+        // 0011 // 3
+        // 0101 // 5
+        // ----
+        // 0111 // 7
+
+        // https://school.programmers.co.kr/learn/courses/30/lessons/17681
+        // https://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/
+        (9 | 30)
+            .toString(2)
+            .replaceAll('0', ' ')
+            .replaceAll('1', '#')
+
+        (20 | 1)
+            .toString(2)
+            .replaceAll('0', ' ')
+            .replaceAll('1', '#')
+    </script>
+</body>
+
+</html>

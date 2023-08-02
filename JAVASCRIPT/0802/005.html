@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>숫자를 표현하는 여러가지 기법</title>
+
+</head>
+
+<body>
+    <script>
+        // parseInt, parseFloat
+        parseInt("123"); // 123
+        parseInt("123.123"); // 123
+        parseInt("123px"); // 123
+        parseInt("px123"); // Nan
+        parseInt("                  10"); // 10
+        parseFloat("123.123"); // 123.123
+        parseFloat("123.123px"); // 123.123
+        parseFloat("px123.123"); // Nan
+        parseInt('11', 2); // 3
+        parseInt('11', 10); // 11
+
+        // toString
+        let num = 3;
+        num.toString(); // "3"
+
+        // isNan
+        isNan(123); // false
+        isNan("123"); // false
+        isNan("123px") // true
+        isNan("px123") // true
+        isNan(Nan); // true
+        isNan(undefined); // true
+        isNan(null); // false
+        isNan({}); // true
+        isNan([]); // false
+        isNan([1, 2, 3]); // true
+        isNan(true); // false
+        isNan(false); // false
+
+        // Number.isNan 사용 권고
+        Number.isNan(Nan);
+        Number.isNan(123);
+        Number.isNan("123");
+        Number.isNan("123px");
+        Number.isNan({});
+        Number.isNan([]);
+
+        // math
+        Math.PI; // 3.141592653589793
+        Math.round(10.49); // 10
+        Math.round(10.77); // 11
+        Math.abs(-10); // 10
+        Math.pow(2, 3); // 8, 2**3
+        Math.pow(4, 0.5); // 2
+        Math.sqrt(16); // 4, 16**0.5
+        Math.random(); // 0 ~ 1 사이의 랜덤한 숫자
+        Math.ceil(10.1); // 11
+        Math.floor(10.9); // 10
+        Math.max(1, 2, 3, 4, 5); // 5
+        Math.min(1, 2, 3, 4, 5); // 1
+
+        let test = [1, 2, 3]
+        Math.max(...test); // 3, 전개구문은 뒤에 있습니다.
+        Math.min(...test); // 1
+    </script>
+</body>
+
+</html>
