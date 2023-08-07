@@ -122,10 +122,15 @@ one();
 two();
 
 
-
 // 찾으면 읽을 수 있음
 // 수정할 수 있지 않음
-// let a = 10;
+// let a = 10; 전역변수
+function test() {
+    let a = 100
+    return a
+}
+test()
+console.log(a) // 100
 
 
 // let a = 10;
