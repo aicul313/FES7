@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>this2</title>
+
+</head>
+
+<body>
+    <script>
+
+        let hotel = [{
+            '이름' : '에이호텔',
+            '위치' : '서울특별시 001',
+            '가격' : { 'A방' : 50000, 'B방' : 30000, 'C방' : 15000 },
+            '방개수' : 50,
+            '예약자수' : 25,
+            '남은방개수' : function () { return this.방개수 - this.예약자수 }
+        }, {
+            '이름' : '비호텔',
+            '위치' : '서울특별시 002',
+            '가격' : { 'A방' : 100000, 'B방' : 50000, 'C방' : 30000 },
+            '방개수' : 100,
+            '예약자수' : 40,
+            '남은방개수' : function () { return this.방개수 - this.예약자수 }
+        }, {
+            '이름' : '씨호텔',
+            '위치' : '서울특별시 003',
+            '가격' : { 'A방' : 800000, 'B방' : 500000, 'C방' : 100000 },
+            '방개수' : 150,
+            '예약자수' : 100,
+            '남은방개수' : function () { return this.방개수 - this.예약자수 }
+        }];
+
+        console.log(hotel[0].남은방개수());
+        console.log(hotel[1].남은방개수());
+        console.log(hotel[2].남은방개수());
+
+        //////////////////////////////
+
+        function sayName() {
+            console.log(this.name);
+        }
+
+        var name = 'Hero';
+        let name2 = "hero";
+        const name3 = "히어로";
+
+        // 전역으로 선언한 name 변수의 앞에는 window가 생략되어 있음
+        // 그렇기 때문에 window.name === "Hero" 성립함
+
+        let 현지 = {
+            name : 'Hyeonji Jeong',
+            sayName : sayName
+        }
+
+        let 현경 = {
+            name : 'Hyeongyoung Jeong',
+            sayName : function() {
+                console.log(this.name);
+            }
+        }
+
+        let 태경 = {
+            name : 'Taegyoung Jeong',
+            sayName : function() {
+                console.log('태경아');
+            }
+        }
+
+        // sayName();
+        sayName();
+        현지.sayName();
+        현경.sayName();
+        태경.sayName();
+
+        // sayName() 함수를 실행했을 때와 현지, 현경, 태경 객체의 sayName 함수를 호출했을 때 결과 비교해보기기
+
+    </script>
+</body>
+
+</html>

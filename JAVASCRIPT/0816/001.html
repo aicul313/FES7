@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>destructuring</title>
+
+</head>
+
+<body>
+    <script>
+        function myFunc([a, b]) {
+            console.log(a);
+            console.log(b);
+        }
+
+        const arr = [1, 2];
+
+        myFunc(arr);
+
+        //////////////////////////////
+
+        const classification = { food1 : '과일', food2 : '채소', food3 : '육류' };
+
+        function objReturn() {
+            return classification;
+        }
+
+        console.log(objReturn());
+
+        // 반환값을 바로 디스트럭쳐링한다.
+        const { food1, food2, food3 } = classification;
+    
+        console.log(food1, food2, food3);
+
+        //////////////////////////////
+
+        let Afood, Bfood, Cfood, Dfood;
+
+        const categories = { Afood : '양식', Bfood : '일식', Cfood : '한식', Dfood : '중식' };
+
+        Afood = categories.Afood;
+        Bfood = categories.Bfood;
+        Cfood = categories.Cfood;
+        Dfood = categories.Dfood;
+
+        console.log(Afood, Bfood, Cfood, Dfood);
+
+        //////////////////////////////
+
+        const { animal1, animal2, animal3 } = { animal1 : '포유류', animal2 : '어류', animal3 : '조류' }
+
+        console.log(animal1, animal2, animal3);
+
+        //////////////////////////////
+
+        let { one } = { one : 1 };
+
+        console.log(one);
+
+        //////////////////////////////
+
+        let { ten, twenty, thirty, fourty, fifty } = { ten : 10, twenty : 20, fifty : 50 };
+        // 디스트럭쳐링은 콜론을 통해 변수를 추가적으로 생성할 수 있음
+
+        console.log(ten);
+        console.log(twenty);
+        console.log(thirty);
+        console.log(fourty);
+        console.log(fifty);
+    </script>
+</body>
+
+</html>
