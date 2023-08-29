@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    height: 5000px;
+    background: linear-gradient(to bottom, lightpink, royalblue);
+}
+
+.wrap {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+path {
+    fill: none;
+    stroke: white;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- button ---------- */
+/* button : inline-block 요소 */
+
+.btn-open {
+    /* button 가운데 정렬 방법 1 */
+    display: block;
+    margin: auto;
+}
+
+.wrap {
+    /* button 가운데 정렬 방법 2 */
+    text-align: center;
+}
+
+.btn-open {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: none;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+    padding: 0 80px;
+    border-radius: 100px;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.btn-open:enabled {
+    cursor: pointer;
+}
+
+.btn-open:enabled:hover {
+    color: royalblue;
+    background-color: white;
+}
+
+/* ---------- modal ---------- */
+.modal {
+    width: 300px;
+    height: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+}
+
+.modal ul a {
+    display: inline-block;
+    background-color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    color: royalblue;
+}
+
+
+/* ---------- modal layout position ---------- */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+}
+
+/* ---------- dark background ---------- */
+.dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+.modal.active, .modal.active + .dim{
+    display: block;
+}
+
+/* ---------- modal close button ---------- */
+.btn-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.btn-close img {
+    width: 70%;
+    vertical-align: top;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>this3</title>
+
+</head>
+
+<body>
+    <script>
+
+        function sayName() {
+            console.log(this.name);
+        }
+
+        var 현지 = {
+            name : 'hyeonji',
+            sayName : sayName
+        }
+
+        var 현경 = {
+            name : 'hyeongyoung',
+            sayName : sayName.bind(현지)
+        }
+
+        현지.sayName();
+        현경.sayName();
+
+        // 현지.sayName()과 현경.sayName()의 결과 값이 무엇이 될까?
+
+        var hyeonji = {
+            name : 'Hyeonji Jeong',
+            sayName : function (is, is2, is3, is4) {
+                console.log(this.name + ' is ' + is + ' or ' + is2);
+            }
+        }
+
+        var hyeongyoung = {
+            name : "Hyeongyoung Jeong",
+        }
+
+        hyeonji.sayName.apply(hyeongyoung, ['언니', '동생']);
+
+        // hyeonji.sayName.apply(hyeongyoung, ['언니', '동생'])의 결과는 Hyeongyoung Jeong is 언니 or 동생이다.
+        // apply를 call로 바꾸어 호출해서 비교해보기
+
+        const taegyoung = {
+            name : "Taegyoung Jeong",
+            sayName : function(느낌표) {
+                console.log(this.name + 느낌표);
+            }
+        }
+
+        const jiun = {
+            name : "Jiun Han",
+        }
+
+        taegyoung.sayName.call(jiun, '!', 10, [1, 2, 3]);
+
+    </script>
+</body>
+
+</html>

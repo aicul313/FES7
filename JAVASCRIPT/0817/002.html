@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>constructor</title>
+
+</head>
+
+<body>
+    <script>
+        function Info(age, address) {
+            this.address = address;
+            this.age = age;
+        }
+
+        function Person(name, age, address) {
+            const newInfo = new Info(age, address);
+
+            return {
+                name : name,
+                getInfo() {
+                    return newInfo;
+                },
+                setAge(age) {
+                    newInfo.age = age;
+                }
+            }
+        }
+
+        const my = Person("현지", 23, "부산");
+        my.getInfo();
+        const sister = Person("현경", 20, "경주");
+        sister.getInfo();
+
+        //////////////////////////////
+
+        let family = {
+            name : "정현지",
+            age : 23,
+            birth : "2001-03-13",
+            relation : "본인"
+        }
+        
+        
+        function Family(name, age, birth, relation) {
+            console.log(this);
+            this.name = name;
+            this.age = age;
+            this.birth = birth;
+            this.relation = relation;
+
+            this.introduce = function () {
+                console.log("introducing...");
+            }
+        }
+
+        let family1 = new Family("정진홍", 52, "1972-11-25", "아버지");
+        let family2 = new Family("지은주", 46, "1978-04-22", "어머니");
+        let family3 = new Family("정현경", 20, "2004-03-05", "여동생");
+        let family4 = new Family("정태경", 12, "2012-08-16", "남동생");
+    </script>
+</body>
+
+</html>
