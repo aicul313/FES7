@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>dom7</title>
+</head>
+
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 자바스크립트 공부하기<button type="button">삭제</button></p>
+    <p>2. 빨래하기<button type="button">삭제</button></p>
+    <p>3. 일찍 자기<button type="button">삭제</button></p>
+
+    <script>
+        // p태그를 선택하여 클릭 이벤트를 붙여줍니다.
+        const ps = document.querySelectorAll('p');
+        ps.forEach((item) => {
+            item.addEventListener('click', () => {
+                alert(item.firstChild.textContent);
+            });
+        });
+
+        // btn 태그를 선택하여 클릭 이벤트를 붙여줍니다.
+        const btns = document.querySelectorAll('button');
+        btns.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                const result = confirm('삭제하시겠습니까?');
+
+                event.stopPropagation();
+
+                if (result) {
+                    item.parentElement.remove();
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
