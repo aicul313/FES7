@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // 생성자함수 Promise는 콜백함수를 인자로 받음
+        const orderCoffee = new Promise((resolve, reject) => {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'orderCoffee.txt');
+            requestObj.onreadystatechange = () => {
+    
+                // 통신 완료된 상태
+                if(requestObj.readyState === 4) {
+    
+                    // 통신 성공
+                    if(requestObj.status === 200) {
+                        const result = requestObj.responseText;
+                        resolve(result)
+                    } 
+                    // 통신 실패 (예외처리)
+                    else {
+                        reject(new Error(`오늘의 커피 원두가 다 떨어졌습니다. ${requestObj.status}`));
+                    }
+                }
+            };
+    
+            requestObj.send();
+        });
+
+        // 이 then은 단독으로 실행되지 않음
+        // 26번째 줄에 resolve 함수가 실행 되어야 실행 됨
+        // 통신이 성공해야 실행함
+        orderCoffee.then((asyncResult) => {
+            console.log(asyncResult);
+        }).catch((error) => {
+            console.log(error);
+        });
+    </script>
+</body>
+
+</html>

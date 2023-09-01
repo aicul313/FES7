@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // fetch 함수를 실행하면, 바로 인자로 전달한 url에 접근해 데이터를 다운받게 됨
+        // 다운이 완료되면 바로 fulfilled 상태의 Promise가 반환됨
+        // 그리고 resolve 함수를 자동으로 호출함
+
+        // 마찬가지로 fetch 함수는 네트워크 오류가 발생하면 reject 상태의 Promise를 반환함
+        // 그리고 reject 함수를 자동으로 호출함
+        
+        let result = fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+        result.then((data) => {
+            console.log(data);
+        });
+    </script>
+</body>
+
+</html>
